@@ -16,10 +16,9 @@ html, body {
 }
 
 .card {
-  border: 1px solid black;
   border-radius: 10px;
-  height: 
-  
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 55vh;
 }
 
 h1{
@@ -41,6 +40,7 @@ button:hover{
   border-radius: 10px;
   background: rgb(131,58,180);
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 51%, rgba(252,69,69,1) 87%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding:10px;
 }
 #list-container {
@@ -49,6 +49,8 @@ button:hover{
   flex-direction: column;
   text-align: center;
   margin: 0;
+  padding:1rem;
+  
   
 }
 ul {
@@ -65,7 +67,10 @@ li {
   display:flex;
   justify-content:space-around;
   align-items:center;
-  
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 5px;
+  margin: 2px;
 }
 li:hover {
   display:flex;
@@ -73,8 +78,6 @@ li:hover {
   align-items:center;
   color: darkgoldenrod;
   cursor: pointer;
-
-
 }
 
   input {
@@ -90,5 +93,9 @@ li:hover {
     color: antiquewhite;
     background: rgb(73,73,73);
     background: linear-gradient(90deg, rgba(73,73,73,1) 0%, rgba(22,22,22,1) 100%);
+  }
+
+  .newTodoStyle {
+    
   }
 

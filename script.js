@@ -1,11 +1,11 @@
 
-let submitTodo = document.getElementById('addBtn');
-let taskLists = document.getElementById('taskLists');
-let inputField = document.getElementById('inputField');
+const submitTodo = document.getElementById('addBtn');
+const taskLists = document.getElementById('taskLists');
+const inputField = document.getElementById('inputField');
 
 submitTodo.addEventListener('click', function(){
     //creates a new li tag
-    let newTodo = document.createElement('li');
+    const newTodo = document.createElement('li');
     newTodo.innerText = inputField.value;
     newTodo.classList.add('newTodoStyle')
     //appends the child to field

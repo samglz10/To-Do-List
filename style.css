@@ -67,17 +67,12 @@ button:hover{
 }
 
 #list-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+  display: inline-block;
   margin: 5px;
   padding:5px;
   overflow: scroll;
   overflow-x: hidden;
-  position: relative;
   box-sizing: border-box;
-  
 
 }
 
@@ -86,22 +81,18 @@ button:hover{
 }
 
 ul {
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
   list-style: none;
   margin:0;
   padding: 0;
-  position: relative;
-  
 }
 
 li {
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 1px 2px 5px;
   padding: 5px;
   margin: 2px;
+  position: relative;
 
 }
 li:hover {
@@ -119,7 +110,6 @@ li:hover {
     margin: 5px;
     text-align: center;
     border: none;
-
   }
 
 
@@ -127,6 +117,6 @@ li:hover {
     text-decoration: line-through;
   }
   
-
+ 
 
 

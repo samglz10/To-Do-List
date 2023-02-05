@@ -2,12 +2,14 @@
 const submitTodo = document.getElementById('addBtn');
 const taskLists = document.getElementById('taskLists');
 const inputField = document.getElementById('inputField');
+const defaultTask = document.getElementById('defaultTask')
 
 submitTodo.addEventListener('click', function(){
     //creates a new li tag
     const newTodo = document.createElement('li');
     newTodo.innerText = inputField.value;
     newTodo.classList.add('newTodoStyle')
+
     //appends the child to field
     taskLists.appendChild(newTodo);
     inputField.value='';
@@ -19,8 +21,11 @@ submitTodo.addEventListener('click', function(){
     newTodo.addEventListener('dblclick', function(){
         taskLists.removeChild(newTodo);
     })
-    
-
+     
 })
+
+
+
+
 
 

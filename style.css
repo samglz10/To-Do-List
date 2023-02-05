@@ -2,55 +2,93 @@ html, body {
     height: 100%;
     width: 100%;
     color: white;
-    background-color: #474d4d;
-    margin : 0 auto;
-  }
-  h1 {
-    text-align: center;
-  }
-  
-  #list-header {
-    display:flex;
-    text-align: center;
-    justify-content: center;
-  }
-  #list-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-  }
-  ul {
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    list-style: none;
-    margin:auto;
-    padding: 0;
-    
-  }
-  li {
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-  }
-  li:hover {
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    color: darkgoldenrod;
-
-  }
-
-   input {
-
-     margin-right: 20px;
-   }
-
-.newTodoStyle{
-    
+    background: rgb(73,73,73);
+    background: radial-gradient(circle, rgba(73,73,73,1) 13%, rgba(22,22,22,1) 84%);
+    margin: 0;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 
   
+}
+
+h1{
+  text-align: center;
+  margin:0;
+}
+button{
+  border-radius: 10px;
+}
+button:hover{
+  cursor: pointer;
+}
+
+#list-header {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 51%, rgba(252,69,69,1) 87%);
+  padding:10px;
+}
+#list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
   
+}
+ul {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  list-style: none;
+  margin:auto;
+  padding: 0;
+  
+}
+li {
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  
+}
+li:hover {
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  color: darkgoldenrod;
+  cursor: pointer;
+
+
+}
+
+  input {
+    border-radius: 10px;
+    margin: 5px;
+  }
+
+  .CompletedList {
+    text-decoration: line-through;
+  }
+  .list-container {
+    border-radius: 10px;
+    color: antiquewhite;
+    background: rgb(73,73,73);
+    background: linear-gradient(90deg, rgba(73,73,73,1) 0%, rgba(22,22,22,1) 100%);
+  }
+

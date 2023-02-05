@@ -13,18 +13,13 @@ submitTodo.addEventListener('click', function(){
     inputField.value='';
 
     newTodo.addEventListener('click', function(){
-        if (taskLists.style.textDecoration !== "line-though")
-        {
-            taskLists.style.textDecoration = "line-through"
-        } else {
-            taskLists.style.textDecoration = 'none'
-        }
-        
+        newTodo.classList.toggle("CompletedList")
     })
 
     newTodo.addEventListener('dblclick', function(){
         taskLists.removeChild(newTodo);
     })
+    
 
 })
 

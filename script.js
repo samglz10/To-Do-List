@@ -7,12 +7,13 @@ const githubLink = document.getElementById('github-link')
 submitTodo.addEventListener('click', function(){
     //creates a new li tag
 
-    if(inputField ===''){
-        return window.alert('Please enter a Task')
-    }
     const newTodo = document.createElement('li');
     newTodo.innerText = inputField.value;
+    if (inputField.value ===''){
+        alert('Please enter a Task')
+    } else {
     newTodo.classList.add('newTodoStyle')
+    }
 
     //appends the child to field
     taskLists.appendChild(newTodo);

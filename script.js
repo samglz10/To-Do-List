@@ -2,7 +2,7 @@
 const submitTodo = document.getElementById('addBtn');
 const taskLists = document.getElementById('taskLists');
 const inputField = document.getElementById('inputField');
-const defaultTask = document.getElementById('defaultTask')
+const githubLink = document.getElementById('github-link')
 
 submitTodo.addEventListener('click', function(){
     //creates a new li tag
@@ -23,6 +23,8 @@ submitTodo.addEventListener('click', function(){
     })
      
 })
+
+
 
 
 

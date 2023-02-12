@@ -9,7 +9,7 @@ html, body {
     background: rgb(73,73,73);
     background: radial-gradient(circle, rgba(73,73,73,1) 13%, rgba(22,22,22,1) 84%);
     margin: 0;
-    position: absolute;
+    position: relative;
 
 }
 .container {
@@ -17,17 +17,17 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 55vh;
+  height: 90vh;
   margin: 0;
-  position: relative;
- 
- 
+  padding: 10px;
+  position: absolute;
+
 }
 
 .card {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 55vh;
+  height: 75vh;
   position: relative;
 }
 
@@ -36,6 +36,8 @@ h1{
   margin:0;
 }
 button{
+  height: 20px;
+  width: 50px;
   border-radius: 10px;
   color: black;
   background-color: white;
@@ -69,10 +71,11 @@ button:hover{
 #list-container {
   display: inline-block;
   margin: 5px;
-  padding:5px;
+  padding: 5px;
   overflow: scroll;
   overflow-x: hidden;
   box-sizing: border-box;
+  position: relative;
 
 }
 
@@ -105,18 +108,31 @@ li:hover {
   background-color: white;
 }
 
-  input {
-    border-radius: 10px;
-    margin: 5px;
-    text-align: center;
-    border: none;
-  }
-
-
-  .CompletedList {
-    text-decoration: line-through;
-  }
+input {
+  border-radius: 10px;
+  height: 20px;
+  margin: 5px;
+  text-align: center;
+  border: none;
   
+}
+#github {
+  position: absolute;
+  bottom:0;
+  height: 10%;
+  width:auto;
+}
+#github-link {
+  display: block;
+  height: 70%;
+  width: auto;
+  z-index: 10;
+  cursor: pointer;
+}
+.CompletedList {
+  text-decoration: line-through;
+}
+
  
 
 

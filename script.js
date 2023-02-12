@@ -13,9 +13,6 @@ submitTodo.addEventListener('click', function(){
         alert('Please enter a Task')
     } else {
     newTodo.classList.add('newTodoStyle')
-    }
-
-    //appends the child to field
     taskLists.appendChild(newTodo);
     inputField.value='';
 
@@ -26,6 +23,10 @@ submitTodo.addEventListener('click', function(){
     newTodo.addEventListener('dblclick', function(){
         taskLists.removeChild(newTodo);
     })
+    }
+
+    //appends the child to field
+    
      
 })
 

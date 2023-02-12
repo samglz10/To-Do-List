@@ -6,6 +6,10 @@ const githubLink = document.getElementById('github-link')
 
 submitTodo.addEventListener('click', function(){
     //creates a new li tag
+
+    if(inputField ===''){
+        return window.alert('Please enter a Task')
+    }
     const newTodo = document.createElement('li');
     newTodo.innerText = inputField.value;
     newTodo.classList.add('newTodoStyle')
@@ -23,6 +27,8 @@ submitTodo.addEventListener('click', function(){
     })
      
 })
+
+
 
 
 

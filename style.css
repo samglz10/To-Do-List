@@ -15,20 +15,23 @@ html, body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
+  width: 100%;
+  position: relative;
   margin: 0;
-  padding: 10px;
-  position: absolute;
+  padding: 0;
+ 
 
 }
 
 .card {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 80vh;
-  position: relative;
+  height: 100%;
+  width: 100%;
+
 }
 
 h1{
@@ -36,22 +39,25 @@ h1{
   margin:0;
 }
 button{
-  height: 20px;
-  width: 50px;
+  height: 30px;
+  width: 50%;
   border-radius: 10px;
   color: black;
   background-color: white;
   outline: none;
   border: none;
-  box-shadow: 0 4px rgb(146, 145, 145);
+  box-shadow: 0 2px rgb(146, 145, 145);
 }
 button:active {
   background-color: rgb(73,73,73);
-  box-shadow: 0 3px #666;
+  box-shadow: 0 4px #666;
   transform: translateY(1px);
 }
 button:hover{
   cursor: pointer;
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 3px #666;
+  transform: translateY(1px);
 }
 
 #list-header {
@@ -59,7 +65,7 @@ button:hover{
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   background: rgb(131,58,180);
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 51%, rgba(252,69,69,1) 87%);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -71,10 +77,11 @@ button:hover{
 #list-container {
   margin: 5px;
   padding: 5px;
+  height: 100%;
+  width: 100%;
   overflow: scroll;
   box-sizing: border-box;
   position: relative;
-
 }
 
 #list-container::-webkit-scrollbar{
@@ -86,8 +93,8 @@ button:hover{
   list-style: none;
   margin:0;
   padding: 0;
-  position: relative;
-  height: 55vh;
+  
+  height: 100%;
 
 }
 
@@ -109,31 +116,47 @@ li:hover {
   background-color: white;
 }
 
-input {
+#inputField {
   border-radius: 10px;
-  height: 20px;
+  height: 30px;
   margin: 5px;
+  width: 50%;
   text-align: center;
   border: none;
   
 }
 #github {
-  position: absolute;
-  bottom:0;
-  height: 10%;
-  width:auto;
+  height:10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 2%;
+  position: relative;
 }
 #github-link {
   display: block;
-  height: 70%;
+  height: 10%;
   width: auto;
-  z-index: 10;
+  z-index: 10;       
   cursor: pointer;
-}
-.CompletedList {
-  text-decoration: line-through;
+
 }
 
- 
+.CompletedList {
+  text-decoration: line-through;
+  background:  rgb(73,73,73);
+}
+.newTodoStyle{
+  background-color: black;
+}
+
+ form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
 
 

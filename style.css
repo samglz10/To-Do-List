@@ -17,8 +17,9 @@ html, body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
-  width: 100%;
+  height: 100dvh;
+  width: 85dvw;
+  box-sizing: border-box;
   position: relative;
   margin: 0;
   padding: 0;
@@ -40,7 +41,7 @@ h1{
 }
 button{
   height: 30px;
-  width: 50%;
+  width: 25%;
   border-radius: 10px;
   color: black;
   background-color: white;
@@ -75,7 +76,6 @@ button:hover{
 }
 
 #list-container {
-  margin: 5px;
   padding: 5px;
   height: 100%;
   width: 100%;
@@ -120,7 +120,7 @@ li:hover {
   border-radius: 10px;
   height: 30px;
   margin: 5px;
-  width: 50%;
+  width: 25%;
   text-align: center;
   border: none;
   
@@ -132,12 +132,11 @@ li:hover {
   justify-content: center;
   align-items: center;
   color: white;
-  margin: 2%;
   position: relative;
 }
 #github-link {
   display: block;
-  height: 10%;
+  height: 50%;
   width: auto;
   z-index: 10;       
   cursor: pointer;
@@ -146,10 +145,10 @@ li:hover {
 
 .CompletedList {
   text-decoration: line-through;
-  background:  rgb(73,73,73);
+  background: black;
 }
 .newTodoStyle{
-  background-color: black;
+  background:  rgb(73,73,73);
 }
 
  form{
@@ -160,3 +159,98 @@ li:hover {
  }
 
 
+#card-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content:end;
+  align-items: center;
+  width: 100%;
+  
+  height: 5%;
+ 
+}
+
+#trash-icon{
+  height: 2rem;
+  width: 2rem;
+  background-color: aliceblue;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+
+
+}
+#trash{
+  height: 100%;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+ 
+  
+}
+
+#due-date{
+  width:  25%;
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+   padding: 10px;
+  
+}
+
+#menu{
+  height: 75px;
+  display: block;
+}
+
+
+#menu.hidden{
+  display:none;
+}
+
+#menu-cancel{
+  display: block;
+}
+
+#menu-cancel{
+  height: 55px;
+  display: block;
+  padding: 5px;
+}
+
+#menu-cancel.hidden{
+  display:none;
+}
+
+.hidden{
+  display:none;
+}
+
+.visible{
+  display: block;
+}
+
+#list-menu{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin: auto;
+  padding: 0;
+  align-items: center;
+  text-align: center;
+  margin:0;
+  padding: 0;
+  height: 100%;
+
+;
+}
+
+#settings{
+  height: 40px;
+  display: block;
+  padding: 5px;
+}

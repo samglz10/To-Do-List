@@ -4,6 +4,13 @@ const taskLists = document.getElementById('taskLists');
 const inputField = document.getElementById('inputField');
 const githubLink = document.getElementById('github-link');
 const defaultTask = document.getElementById('defaultTask');
+const menu = document.getElementById('menu');
+const menuCancel = document.getElementById('menu-cancel');
+const trashItems = document.getElementById('trash');
+const todoForm = document.getElementById('todo-form');
+
+
+const allTrashTasks = [];
 const allTasks = [];
 
 
@@ -41,18 +48,20 @@ submitTodo.addEventListener('click', function () {
     const newTodo = document.createElement('li');
     newTodo.innerText = inputField.value;
 
-    
+
     if (inputField.value === '') {
         alert('Please enter a Task');
     } else {
-        newTodo.classList.add('newTodoStyle')
+        newTodo.classList.add('defaultTask')
         taskLists.appendChild(newTodo);
         allTasks.push(newTask);
         console.log(allTasks);
         inputField.value = "";
 
         newTodo.addEventListener('click', function () {
-            newTodo.classList.toggle("CompletedList")
+            newTodo.classList.toggle("CompletedList");
+            //console.log(newTodo.classList.toggle("CompletedList"));
+
         })
 
         newTodo.addEventListener('dblclick', function () {
@@ -67,10 +76,26 @@ submitTodo.addEventListener('click', function () {
 defaultTask.addEventListener('click', () => {
     console.log('clicked')
     defaultTask.classList.toggle("CompletedList");
-    console.log(defaultTask.classList)
+
 })
 
 defaultTask.addEventListener('dblclick', function () {
     defaultTask.remove(defaultTask);
 });
+
+const toggleMenu = () => {
+    menu.classList.toggle('visible');
+    menuCancel.classList.toggle('hidden');
+    todoForm.style.display = 'none';
+    console.log('visible');
+    if (menu.classList.contains('visible') === true){
+        menu.classList.toggle('hidden');
+        todoForm.style.display = 'none';
+
+    } else {
+        menu.classList.toggle('hidden');
+        menuCancel.classList.toggle('visible');
+        todoForm.style.display = 'flex';
+    }
+}
 

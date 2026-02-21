@@ -345,7 +345,7 @@ tr:nth-child(even) {
     padding: 5px 5px; 
     cursor: pointer; 
     border-radius: 5px;
-    width: 45%;
+    width: 50%;
     text-align: center;
 }
 .complete-btn { 

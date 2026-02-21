@@ -15,6 +15,11 @@ const dueDateInput = document.getElementById('due-date');
 const allTrashTasks = [];
 const allTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
+const getAllTasks = () => {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    console.log(storedTasks);
+    return storedTasks;
+}
 
 const todoBody = document.getElementById('todo-body');
 
@@ -51,13 +56,23 @@ todoForm.addEventListener('submit', function (e) {
 
     };
     console.log(newTask);
+    allTasks.push(newTask);
+    localStorage.setItem('tasks', JSON.stringify(allTasks));
     renderTask(newTask);
     todoForm.reset();
 });
 
+const updateTaskProperty = (key, field, value) => {
+    const taskIndex = allTasks.findIndex(task => task.key === key);
+    if (taskIndex !== -1) {
+        allTasks[taskIndex][field] = value;
+        localStorage.setItem('tasks', JSON.stringify(allTasks));
+    }
+};
+
 function renderTask(task) {
     const row = document.createElement('tr');
-    row.innerText = task; // Set the description as the row's text content
+    row.innerText = task.description; // Set the description as the row's text content
 
 
     // Applying a class if completed (useful for CSS striking through text)
@@ -88,90 +103,53 @@ function renderTask(task) {
         
         <td class="action-buttons">
             <button class="delete-btn">✕</button>
-            <button class="complete-btn">✅</button>
         </td>
     `;
 
     todoBody.appendChild(row);
+//
+    const prioritySelect = row.querySelector(`#priority-select-${task.key}`);
+    prioritySelect.addEventListener('change', () => {
+        updateTaskProperty(task.key, 'priority', prioritySelect.value);
+    });
 
+// Due date change listener
     const dateInput = row.querySelector(`#due-date-${task.key}`);
     dateInput.addEventListener('change', () => {
-        task.dueDate = dateInput.value;
+        updateTaskProperty(task.key, 'dueDate', dateInput.value);
+    });
+// Status change listener
+    const statusSelect = row.querySelector(`#status-select-${task.key}`);
+    statusSelect.addEventListener('change', () => {
+        const isCompleted = statusSelect.value === 'completed';
+        updateTaskProperty(task.key, 'completed', isCompleted);
+        row.classList.toggle('completed', isCompleted);
+    });
+// Description change listener
+    const descriptionInput = row.querySelector('.description-input');
+    descriptionInput.addEventListener('change', () => {
+        updateTaskProperty(task.key, 'description', descriptionInput.value);
     });
 }
 
+ // Function to update tasks in localStorage   
+updateTasksInLocalStorage = () => {
+    localStorage.getItem('tasks', JSON.stringify(allTasks));
+    //console.log(`allTasks`, allTasks);
+    allTasks.forEach(task => {
+        if(task.completed) {
 
-/*
-
-function addTodoToDOM(taskDescription) {
-    const newTodo = document.createElement('li');
-    newTodo.innerText = taskDescription;
-    newTodo.classList.add('defaultTask');
-    taskLists.appendChild(newTodo);
-
-    newTodo.addEventListener('click', function () {
-        newTodo.classList.toggle("CompletedList");
+        }
+        console.log(`task`, task);
     });
 
-    newTodo.addEventListener('dblclick', function () {
-        taskLists.removeChild(newTodo);
-
-    });
 }
+// Initial rendering of tasks on page load
+updateTasksInLocalStorage();
 
-allTasks.forEach(task => addTodoToDOM(task.description));
-
-
-function uniqueKey(number) {
-    let randomNumber = Math.floor(Math.random() * number) + 1;
-    let timestamp = Date.now();
-    let uniqueKey = randomNumber + '-' + timestamp;
-
-    console.log(uniqueKey);
-    return uniqueKey;
-};
-
-
-submitTodo.addEventListener('click', function (e) {
-    e.preventDefault();
-    let newTask = {
-        "key": uniqueKey(Math.floor(Math.random() * 1000000)),
-        priority: "",
-        description: inputField.value,
-        creationDate: Date.now(),
-        dueDate: "",
-        completed: false,
-        deleted: false,
-        completionDate: "",
-    };
-
-    console.log(newTask);
-    //console.log(uniqueKey(10));
-    if (inputField.value === '') {
-        alert('Please enter a Task');
-    } else {
-        
-        addTodoToDOM(inputField.value);
-        allTasks.push(newTask);
-        localStorage.setItem('tasks', JSON.stringify(allTasks));
-        console.log(allTasks);
-        inputField.value = "";
-        
-        addTodoToDOM(inputField.value);
+// Render all tasks from localStorage when the page loads
+allTasks.forEach(task => {
+    if (!task.deleted){
+        renderTask(task);
     }
-
-})
-
-defaultTask.addEventListener('click', () => {
-    console.log('clicked')
-    defaultTask.classList.toggle("CompletedList");
-
-})
-
-defaultTask.addEventListener('dblclick', function () {
-    defaultTask.remove(defaultTask);
-
 });
-
-
-*/

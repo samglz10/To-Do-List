@@ -56,9 +56,11 @@ button:active {
 }
 button:hover{
   cursor: pointer;
-  background-color: rgb(219, 219, 219);
   box-shadow: 0 3px #666;
   transform: translateY(1px);
+  transition: background-color 0.3s ease;
+  background-color: rgb(73,73,73);
+  color: white;
 }
 
 #list-header {
@@ -70,7 +72,8 @@ button:hover{
   background: rgb(131,58,180);
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 51%, rgba(252,69,69,1) 87%);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding:10px;
+  padding: 5px;
+  height: 5%;
   
  
 }
@@ -126,23 +129,54 @@ li:hover {
   
 }
 #github {
-  height:10%;
+  margin:auto;
+  height:5%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  position: relative;
 }
 #github-link {
   display: block;
-  height: 50%;
+  height: 75%;
   width: auto;
   z-index: 10;       
   cursor: pointer;
 
 }
+#priority-input{
+  max-width: 50%;
+  height: 50%;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 5px;
+   margin-bottom: 5px;
+}
+option{
+  background-color: white;
+  color: black;
+  text-align: left;
 
+}
+
+.priority-cell{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+label{
+  max-width: 50%;
+  width: 50%;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+   padding: 10px;
+   margin-bottom: 5px;
+}
 .CompletedList {
   text-decoration: line-through;
   background: black;
@@ -156,7 +190,13 @@ li:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: black;
+  background: radial-gradient(circle, rgba(73,73,73,1) 13%, rgba(22,22,22,1) 84%);  
+  padding: 10px;  
  }
+ .hidden {
+    display: none !important;
+}
 
 
 #card-footer{
@@ -203,7 +243,7 @@ li:hover {
 }
 
 #menu{
-  height: 75px;
+  height: 50px;
   display: block;
 }
 
@@ -217,7 +257,7 @@ li:hover {
 }
 
 #menu-cancel{
-  height: 55px;
+  height: 35px;
   display: block;
   padding: 5px;
 }
@@ -248,9 +288,135 @@ li:hover {
 
 ;
 }
+.status-select{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: none;
+  text-align: left;
+}
 
 #settings{
   height: 40px;
-  display: block;
+  width: 40px;
+  border-radius: 50%;
+
+  display: flex;
   padding: 5px;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #dddddd;
+  background: radial-gradient(circle, rgba(73,73,73,1) 13%, rgba(22,22,22,1) 84%);;
+}
+td{
+  text-align: center;
+  height: 100%;
+  padding:3px;
+  margin: 0;
+}
+
+
+
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 5px;
+}
+
+tr{
+  padding: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #737373;
+  
+}
+
+.delete-btn { 
+    background-color: #e72f2f; 
+    color: white; 
+    border: none; 
+    padding: 5px 5px; 
+    cursor: pointer; 
+    border-radius: 5px;
+    width: 45%;
+    text-align: center;
+}
+.complete-btn { 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    padding: 5px 5px; 
+    cursor: pointer; 
+    border-radius: 5px;
+    width: 45%;
+    text-align: center;
+}
+.action-buttons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.description-input{
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: none;
+}
+
+.due-date-input{
+  width:100%;
+  height: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 5px;
+
+ }
+
+ .priority-select{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding:5px;
+  border: none;
+  outline: none;
+  background: rgba(73,73,73);
+}
+
+  .priority-select > option {
+    background: radial-gradient(circle, rgba(73,73,73,1) 13%, rgba(22,22,22,1) 84%);
+    color: radial-gradient(circle, rgba(73,73,73,1) 13%, rgba(22,22,22,1) 84%);
+    text-align: center;
+  }
+
+  select {
+    height: 100%;
+    background:rgba(73,73,73,1);
+    color: white;
+    text-align: center
+  }
+
+    select > * {
+    background:rgba(73,73,73,1);
+    color: white;
+    text-align: center
+  }

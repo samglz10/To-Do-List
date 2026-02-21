@@ -12,14 +12,23 @@ const todoTable = document.getElementById('todo-table');
 const priorityInput = document.getElementById('priority-input');
 const dueDateInput = document.getElementById('due-date');
 
-const allTrashTasks = [];
+const allTrashTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 const allTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 const getAllTasks = () => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    console.log(storedTasks);
+    //console.log(storedTasks);
     return storedTasks;
 }
+
+const getAllTrashTasks = () => {
+    const storedTrashTasks = getAllTasks().filter(task => task.completed === true);
+    localStorage.setItem('trashTasks', JSON.stringify(storedTrashTasks));
+    //console.log(`storedTrashTasks`, storedTrashTasks);
+    return storedTrashTasks;
+}
+
+getAllTrashTasks();
 
 const todoBody = document.getElementById('todo-body');
 
@@ -149,7 +158,9 @@ updateTasksInLocalStorage();
 
 // Render all tasks from localStorage when the page loads
 allTasks.forEach(task => {
-    if (!task.deleted){
+    if (!task.completed ) {
         renderTask(task);
+    } else {
+        allTrashTasks.push(task);
     }
 });

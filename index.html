@@ -8,18 +8,20 @@
 </head>
 
 <body>
+  <div id="list-header">
+    <div id="list-menu">
+      <img src="./assets/menu-white.svg" alt="menu" id="menu" class="hidden" onclick="toggleMenu()" />
+      <img src="./assets/cancel.svg" alt="menu" id="menu-cancel" class="visible" onclick="toggleMenu()" />
+      <h1>
+        To-Do List 📑
+      </h1>
+      <img src="./assets/gear.svg" alt="settings" id="settings" id="settings" class="visible" />
+    </div>
+  </div>
   <div class="container">
+
     <div class="card">
-      <div id="list-header">
-        <div id="list-menu">
-          <img src="./assets/menu-white.svg" alt="menu" id="menu" class="hidden" onclick="toggleMenu()" />
-          <img src="./assets/cancel.svg" alt="menu" id="menu-cancel" class="visible" onclick="toggleMenu()" />
-          <h1>
-            To-Do List 📌
-          </h1>
-          <img src="./assets/gear.svg" alt="settings" id="settings" id="settings" class="visible" />
-        </div>
-      </div>
+
       <form id="todo-form">
         <div class="input-container">
           <label for="task">Add a Task:</label>
@@ -35,14 +37,12 @@
             <option value="⚡">Medium ⚡</option>
             <option value="‼️">High ‼️</option>
           </select>
+          <button id="addBtn">📝 Add</button>
         </div>
-        <button id="addBtn">Add</button>
       </form>
       <div id="list-container">
         <div id="taskLists">
           <div class="reload-container">
-            <button id="reload-btn" onclick="location.reload()"> ⟳</button>
-            <button id="reload-btn" onclick="location.reload()"> ⟳</button>
             <button id="reload-btn" onclick="location.reload()"> ⟳</button>
             <button id="reload-btn" onclick="location.reload()"> ⟳</button>
           </div>
@@ -52,7 +52,6 @@
               <tr>
                 <th>Priority</th>
                 <th>Description</th>
-                <th>Created</th>
                 <th>Status</th>
                 <th>Due</th>
                 <th>Action</th>

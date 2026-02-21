@@ -99,7 +99,6 @@ function renderTask(task) {
         <td>
             <input class="description-input" type="text" value="${task.description}">
         </td>
-        <td>${task.creationDate}</td>
         <td>
             <select id="status-select-${task.key}" class="status-select">
                 <option value="pending" ${!task.completed ? "selected" : ""}>⏳ Pending</option>
